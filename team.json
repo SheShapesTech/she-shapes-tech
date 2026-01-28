@@ -1,0 +1,56 @@
+{
+  "members": [
+    {
+      "name": "Vorname Nachname",
+      "image": "images/team-member-1.jpg",
+      "role": {
+        "de": "Gründerin & Leitung",
+        "en": "Founder & Lead"
+      },
+      "field": "Computer Science",
+      "description": {
+        "de": "Beschreibung hier einfügen: Was macht diese Person bei She Shapes Tech? Was studiert sie? Was sind ihre Interessen?",
+        "en": "Add description here: What does this person do at She Shapes Tech? What does she study? What are her interests?"
+      }
+    },
+    {
+      "name": "Vorname Nachname",
+      "image": "images/team-member-2.jpg",
+      "role": {
+        "de": "Event-Koordinatorin",
+        "en": "Events Coordinator"
+      },
+      "field": "Information Systems",
+      "description": {
+        "de": "Beschreibung hier einfügen: Was macht diese Person bei She Shapes Tech? Was studiert sie? Was sind ihre Interessen?",
+        "en": "Add description here: What does this person do at She Shapes Tech? What does she study? What are her interests?"
+      }
+    },
+    {
+      "name": "Vorname Nachname",
+      "image": "images/team-member-3.jpg",
+      "role": {
+        "de": "Community Managerin",
+        "en": "Community Manager"
+      },
+      "field": "Data Science",
+      "description": {
+        "de": "Beschreibung hier einfügen: Was macht diese Person bei She Shapes Tech? Was studiert sie? Was sind ihre Interessen?",
+        "en": "Add description here: What does this person do at She Shapes Tech? What does she study? What are her interests?"
+      }
+    },
+    {
+      "name": "Vorname Nachname",
+      "image": "images/team-member-4.jpg",
+      "role": {
+        "de": "Outreach Leitung",
+        "en": "Outreach Lead"
+      },
+      "field": "Software Engineering",
+      "description": {
+        "de": "Beschreibung hier einfügen: Was macht diese Person bei She Shapes Tech? Was studiert sie? Was sind ihre Interessen?",
+        "en": "Add description here: What does this person do at She Shapes Tech? What does she study? What are her interests?"
+      }
+    }
+  ]
+}

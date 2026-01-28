@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>She Shapes Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Circuit Background SVG -->
+  <svg class="circuit-bg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="circuit" patternUnits="userSpaceOnUse" width="100" height="100">
+        <path d="M0 50 H40 M60 50 H100 M50 0 V40 M50 60 V100" stroke="#8b5cf6" stroke-width="0.5" fill="none" opacity="0.3"/>
+        <circle cx="50" cy="50" r="4" fill="#8b5cf6" opacity="0.4"/>
+        <circle cx="0" cy="50" r="2" fill="#38bdf8" opacity="0.4"/>
+        <circle cx="100" cy="50" r="2" fill="#38bdf8" opacity="0.4"/>
+        <circle cx="50" cy="0" r="2" fill="#38bdf8" opacity="0.4"/>
+        <circle cx="50" cy="100" r="2" fill="#38bdf8" opacity="0.4"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#circuit)"/>
+  </svg>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" onclick="showPage('home')">
+        <img src="Abbildungen/SheShapesTechLogo.png" alt="She Shapes Tech Logo" class="logo-img">
+        <span class="logo-text"></span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link active" data-page="home" onclick="showPage('home')" data-de="Startseite" data-en="Home">Home</a>
+        <a class="nav-link" data-page="events" onclick="showPage('events')" data-de="Events" data-en="Events">Events</a>
+        <a class="nav-link" data-page="meeteat" onclick="showPage('meeteat')" data-de="Meet & Eat" data-en="Meet & Eat">Meet & Eat</a>
+        <a class="nav-link" data-page="team" onclick="showPage('team')" data-de="Team" data-en="Team">Team</a>
+        <a class="nav-link" data-page="sponsors" onclick="showPage('sponsors')" data-de="Sponsoren" data-en="Sponsors">Sponsors</a>
+        <a class="nav-link" data-page="contact" onclick="showPage('contact')" data-de="Kontakt" data-en="Contact">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang-switch">
+          <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+          <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link active" data-page="home" onclick="showPage('home'); toggleMobileMenu()" data-de="Startseite" data-en="Home">Home</a>
+      <a class="mobile-nav-link" data-page="events" onclick="showPage('events'); toggleMobileMenu()" data-de="Events" data-en="Events">Events</a>
+      <a class="mobile-nav-link" data-page="meeteat" onclick="showPage('meeteat'); toggleMobileMenu()" data-de="Meet & Eat" data-en="Meet & Eat">Meet & Eat</a>
+      <a class="mobile-nav-link" data-page="team" onclick="showPage('team'); toggleMobileMenu()" data-de="Team" data-en="Team">Team</a>
+      <a class="mobile-nav-link" data-page="sponsors" onclick="showPage('sponsors'); toggleMobileMenu()" data-de="Sponsoren" data-en="Sponsors">Sponsors</a>
+      <a class="mobile-nav-link" data-page="contact" onclick="showPage('contact'); toggleMobileMenu()" data-de="Kontakt" data-en="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Page -->
+    <div class="page active" id="page-home">
+      <section class="hero">
+        <!-- replaced h1 text with SheShapesTechText logo image -->
+        <img src="Abbildungen/SheShapesTechText.png" alt="She Shapes Tech" class="hero-logo">
+        <p class="subtitle" data-de="Frauen in der Technik @ ZHAW School of Engineering" data-en="Women in Tech @ ZHAW School of Engineering">Women in Tech @ ZHAW School of Engineering</p>
+        <p class="intro" data-de="Wir sind eine Gemeinschaft von Frauen in Technologie an der ZHAW School of Engineering. Unser Ziel ist es, uns gegenseitig zu unterstützen, Wissen zu teilen und ein Netzwerk aufzubauen, das alle stärkt." data-en="We are a community of women in technology at ZHAW School of Engineering. Our goal is to support each other, share knowledge, and build a network that empowers everyone.">We are a community of women in technology at ZHAW School of Engineering. Our goal is to support each other, share knowledge, and build a network that empowers everyone.</p>
+      </section>
+
+      <section class="cards-section">
+        <div class="cards-grid">
+          <div class="section-card" onclick="showPage('events')">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 data-de="Events" data-en="Events">Events</h3>
+            <p data-de="Workshops, Vorträge und Networking-Events für Frauen in der Technik." data-en="Workshops, talks, and networking events for women in tech.">Workshops, talks, and networking events for women in tech.</p>
+          </div>
+
+          <div class="section-card" onclick="showPage('meeteat')">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3 data-de="Meet & Eat" data-en="Meet & Eat">Meet & Eat</h3>
+            <p data-de="Wöchentliches Mittagessen in der Mensa – komm vorbei und vernetze dich!" data-en="Weekly lunch meetups at the Mensa – come by and connect!">Weekly lunch meetups at the Mensa – come by and connect!</p>
+          </div>
+
+          <div class="section-card" onclick="showPage('team')">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 data-de="Unser Team" data-en="Our Team">Our Team</h3>
+            <p data-de="Lerne die Menschen kennen, die She Shapes Tech ausmachen." data-en="Meet the people who make She Shapes Tech happen.">Meet the people who make She Shapes Tech happen.</p>
+          </div>
+
+          <div class="section-card" onclick="showPage('contact')">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3 data-de="Kontakt" data-en="Contact">Contact</h3>
+            <p data-de="Hast du Fragen? Melde dich bei uns!" data-en="Have questions? Get in touch with us!">Have questions? Get in touch with us!</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Events Page -->
+    <div class="page" id="page-events">
+      <div class="page-title">
+        <h1 data-de="Events" data-en="Events">Events</h1>
+        <p class="subtitle" data-de="Kommende Veranstaltungen" data-en="Upcoming Events">Upcoming Events</p>
+      </div>
+
+      <div class="events-list">
+        <div class="event-card">
+          <div class="event-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="event-info">
+            <h3 class="event-title" data-de="Netzwerkabend" data-en="Networking evening">Christmas Event</h3>
+            <p class="event-date" data-de="kommt bald..." data-en="coming soon...">December 11, 2025</p>
+            <p class="event-desc" data-de="Ein inspirierender Abend zum Vernetzen, Austauschen und Weiterdenken. Gemeinsam mit SVIN und SHeroes bringen wir Frauen aus Studium, Lehre, Forschung und Industrie an einen Tisch. In einem moderierten Gespräch teilen wir Erfahrungen, Perspektiven und Fragen rund um Gleichstellung im MINT-Bereich. Beim anschliessenden Apéro bleibt Zeit für persönliche Gespräche, neue Kontakte und ungezwungenes Networking." data-en="An inspiring evening to connect, exchange ideas, and broaden perspectives. Together with SVIN and SHeroes, we bring women from studies, teaching, research, and industry together for an open and moderated discussion on gender equality in STEM. An apéro afterwards offers plenty of time for personal conversations, new connections, and relaxed networking.">Celebrate the Christmas season with us! Get together with snacks and good vibes.</p>
+          </div>
+          
+          <a href="https://teams.microsoft.com/l/channel/19%3AXi784Ms6NohX6oO0abKqMh0Py_Kr3x9U7NtXGiziwyM1%40thread.tacv2/General?groupId=c9022015-7217-4b42-a31d-dd1ae8f6bc8e&tenantId=5d1a9f9d-201f-4a10-b983-451cf65cbc1e" target="_blank" class="event-btn">
+            <span data-de="Mehr erfahren" data-en="Learn More">Learn More</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="event-card">
+          <div class="event-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="event-info">
+            <h3 class="event-title" data-de="Billardabend" data-en="Billiards evening">Christmas Event</h3>
+            <p class="event-date" data-de="kommt bald..." data-en="coming soon..">December 11, 2025</p>
+            <p class="event-desc" data-de="Ein entspannter Abend ohne Agenda. Gemeinsam Billard spielen, plaudern und neue Leute kennenlernen. Perfekt, um abseits von Hörsälen und Meetings ins Gespräch zu kommen und das Netzwerk in lockerer Atmosphäre zu erweitern." data-en="A casual evening with no formal programme. Playing billiards, chatting, and meeting new people in a relaxed setting. A great opportunity to connect beyond lectures and meetings and grow your network in an easy-going atmosphere.">Celebrate the Christmas season with us! Get together with snacks and good vibes.</p>
+          </div>
+          
+          <a href="https://teams.microsoft.com/l/channel/19%3AXi784Ms6NohX6oO0abKqMh0Py_Kr3x9U7NtXGiziwyM1%40thread.tacv2/General?groupId=c9022015-7217-4b42-a31d-dd1ae8f6bc8e&tenantId=5d1a9f9d-201f-4a10-b983-451cf65cbc1e" target="_blank" class="event-btn">
+            <span data-de="Mehr erfahren" data-en="Learn More">Learn More</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meet & Eat Page -->
+    <div class="page" id="page-meeteat">
+      <div class="page-title">
+        <h1 style="text-transform: lowercase;" data-de="meet & eat" data-en="meet & eat">meet & eat</h1>
+        <p class="subtitle" data-de="Gemeinsam essen, gemeinsam wachsen" data-en="Eat together, grow together">Eat together, grow together</p>
+      </div>
+
+      <div class="meeteat-card">
+        <div class="meeteat-content">
+          <div class="schedule-grid">
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div>
+                <p class="schedule-label">Schedule</p>
+                <p class="schedule-value" data-de="kommt bald..." data-en="coming soon..">Tuesday & Thursday</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="schedule-label">Time</p>
+                <p class="schedule-value">11:45 – 13:00</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="schedule-label">Location</p>
+                <p class="schedule-value" data-de="Mensa TN, 2. Stock" data-en="Mensa TN, 2nd Floor">Mensa TN, 2nd Floor</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="meeteat-desc" data-de="Komm vorbei zum Mittagessen! Triff andere Frauen aus der Tech-Szene, tausche dich aus und baue Kontakte auf. Keine Anmeldung erforderlich – einfach vorbeikommen!" data-en="Join us for lunch! Meet other women in tech, exchange ideas, and build connections. No registration required – just show up!">Join us for lunch! Meet other women in tech, exchange ideas, and build connections. No registration required – just show up!</p>
+
+          <div class="qr-section">
+            <h3 class="qr-title" data-de="Tritt unserer Community bei" data-en="Join Our Community">Join Our Community</h3>
+
+            <div class="qr-grid">
+              <div class="qr-item">
+                <div class="qr-image-container">
+                  <img src="Abbildungen/TeamsQR.png" alt="MS Teams QR Code" class="qr-image">
+                </div>
+                <a href="https://teams.microsoft.com/l/channel/19%3AXi784Ms6NohX6oO0abKqMh0Py_Kr3x9U7NtXGiziwyM1%40thread.tacv2/General?groupId=c9022015-7217-4b42-a31d-dd1ae8f6bc8e&tenantId=5d1a9f9d-201f-4a10-b983-451cf65cbc1e" target="_blank" class="qr-btn primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span data-de="MS Teams beitreten" data-en="Join MS Teams">Join MS Teams</span>
+                </a>
+              </div>
+
+              <div class="qr-item">
+                <div class="qr-image-container">
+                  <img src="Abbildungen/WhatsappQR.png" alt="WhatsApp QR Code" class="qr-image">
+                </div>
+                <a href="https://chat.whatsapp.com/KIdNWrZGl5KG2G5Mlc4Zsm" target="_blank" class="qr-btn accent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span data-de="WhatsApp Gruppe" data-en="WhatsApp Group">WhatsApp Group</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Page -->
+    <div class="page" id="page-team">
+      <div class="page-title">
+        <h1 data-de="Unser Team" data-en="Our Team">Our Team</h1>
+        <p class="subtitle" data-de="Die Frauen hinter She Shapes Tech" data-en="The women behind She Shapes Tech">The women behind She Shapes Tech</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-image">
+            <img src="Abbildungen/Person1.png" alt="Team Member 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="team-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Näf Romana</h3>
+            <p class="team-role" data-de="Präsidentin" data-en="President">President</p>
+            <p class="team-desc" data-de="Hier kommt eine kurze Beschreibung der Person und ihrer Aufgaben bei She Shapes Tech." data-en="Here comes a short description of the person and their tasks at She Shapes Tech.">Here comes a short description of the person and their tasks at She Shapes Tech.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-image">
+            <img src="Abbildungen/Person2.png" alt="Team Member 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="team-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Solenthaler Nicole</h3>
+            <p class="team-role" data-de="Vizepräsidentin" data-en="Vice President">Vice President</p>
+            <p class="team-desc" data-de="Hier kommt eine kurze Beschreibung der Person und ihrer Aufgaben bei She Shapes Tech." data-en="Here comes a short description of the person and their tasks at She Shapes Tech.">Here comes a short description of the person and their tasks at She Shapes Tech.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-image">
+            <img src="Abbildungen/Person3.png" alt="Team Member 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="team-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Conradt Monika</h3>
+            <p class="team-role" data-de="Event-Koordinatorin" data-en="Event Coordinator">Event Coordinator</p>
+            <p class="team-desc" data-de="Hier kommt eine kurze Beschreibung der Person und ihrer Aufgaben bei She Shapes Tech." data-en="Here comes a short description of the person and their tasks at She Shapes Tech.">Here comes a short description of the person and their tasks at She Shapes Tech.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-image">
+            <img src="Abbildungen/Person4.png" alt="Team Member 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="team-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Stecher Jennifer</h3>
+            <p class="team-role" data-de="Social Media" data-en="Social Media">Social Media</p>
+            <p class="team-desc" data-de="Hier kommt eine kurze Beschreibung der Person und ihrer Aufgaben bei She Shapes Tech." data-en="Here comes a short description of the person and their tasks at She Shapes Tech.">Here comes a short description of the person and their tasks at She Shapes Tech.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="page" id="page-contact">
+      <div class="page-title">
+        <h1 data-de="Kontakt" data-en="Contact">Contact</h1>
+        <p class="subtitle" data-de="Wir freuen uns von dir zu hören" data-en="We'd love to hear from you">We'd love to hear from you</p>
+      </div>
+
+      <div class="contact-links-card" style="max-width: 600px; margin: 0 auto;">
+        <h3 class="links-title" data-de="Verbinde dich mit uns" data-en="Connect With Us">Connect With Us</h3>
+
+        <a href="https://teams.microsoft.com/l/channel/19%3AXi784Ms6NohX6oO0abKqMh0Py_Kr3x9U7NtXGiziwyM1%40thread.tacv2/General?groupId=c9022015-7217-4b42-a31d-dd1ae8f6bc8e&tenantId=5d1a9f9d-201f-4a10-b983-451cf65cbc1e" target="_blank" class="contact-link">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="link-title" data-de="MS Teams beitreten" data-en="Join MS Teams">Join MS Teams</p>
+            <p class="link-desc" data-de="Tritt unserem Teams-Kanal bei" data-en="Join our Teams channel">Join our Teams channel</p>
+          </div>
+        </a>
+
+        <a href="https://chat.whatsapp.com/KIdNWrZGl5KG2G5Mlc4Zsm" target="_blank" class="contact-link">
+          <div class="link-icon accent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="link-title" data-de="WhatsApp Gruppe" data-en="WhatsApp Group">WhatsApp Group</p>
+            <p class="link-desc" data-de="Chatte mit uns auf WhatsApp" data-en="Chat with us on WhatsApp">Chat with us on WhatsApp</p>
+          </div>
+        </a>
+
+        <a href="mailto:sheshapestech.engineering@zhaw.ch" class="contact-link">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div>
+            <p class="link-title">Email</p>
+            <p class="link-desc">sheshapestech.engineering@zhaw.ch</p>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sheshapestech/" target="_blank" class="contact-link" aria-label="Instagram">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <div>
+            <p class="link-title">Instagram</p>
+            <p class="link-desc">@sheshapestech</p>
+          </div>
+        </a>
+        </div>
+      </div>
+    
+    
+
+    <!-- Sponsors Page -->
+    <div class="page" id="page-sponsors">
+      <div class="page-title">
+        <h1 data-de="Sponsoren" data-en="Sponsors">Sponsors</h1>
+        <p class="subtitle" data-de="Unsere Partner und Unterstützer" data-en="Our partners and supporters">Our partners and supporters</p>
+      </div>
+
+      <div class="sponsors-container">
+        <p class="sponsors-intro" data-de="Wir danken unseren Sponsoren und Partnern, die She Shapes Tech unterstützen und es uns ermöglichen, Frauen in der Technik zu fördern." data-en="We thank our sponsors and partners who support She Shapes Tech and enable us to empower women in technology.">We thank our sponsors and partners who support She Shapes Tech and enable us to empower women in technology.</p>
+        
+        <div class="sponsors-grid">
+          <!-- Sponsor 1 - SVIN -->
+          <div class="sponsor-card">
+            <div class="sponsor-image">
+              <img src="Abbildungen/Sponsor1.png" alt="SVIN" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sponsor-image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="sponsor-info">
+              <h3 class="sponsor-name">SVIN</h3>
+              <p class="sponsor-desc" data-de="Der Schweizerische Verband der Ingenieurinnen unterstützt Frauen in technischen Berufen und fördert den Austausch und die Vernetzung." data-en="The Swiss Association of Women Engineers supports women in technical professions and promotes exchange and networking.">The Swiss Association of Women Engineers supports women in technical professions and promotes exchange and networking.</p>
+            </div>
+          </div>
+
+          <!-- Sponsor 2 -->
+          <div class="sponsor-card">
+            <div class="sponsor-image">
+              <img src="Abbildungen/Sponsor2.png" alt="Sponsor 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sponsor-image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="sponsor-info">
+              <h3 class="sponsor-name" data-de="ZHAW" data-en="ZHAW">ZHAW</h3>
+              <p class="sponsor-desc" data-de="Die ZHAW Zürcher Hochschule für Angewandte Wissenschaften steht für praxisnahe Lehre, angewandte Forschung und Innovation. Sie fördert den Wissenstransfer zwischen Wissenschaft, Wirtschaft und Gesellschaft und engagiert sich für Chancengleichheit sowie die Förderung von Frauen in technischen und naturwissenschaftlichen Bereichen." data-en="ZHAW Zurich University of Applied Sciences represents practice-oriented education, applied research, and innovation. It fosters knowledge transfer between academia, industry, and society and is committed to equal opportunities and the promotion of women in engineering and science.">Here comes a short description of the sponsor and how they support She Shapes Tech.</p>
+            </div>
+          </div>
+
+          <!-- Sponsor 3 -->
+          <div class="sponsor-card">
+            <div class="sponsor-image">
+              <img src="Abbildungen/Sponsor3.png" alt="Sponsor 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sponsor-image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="sponsor-info">
+              <h3 class="sponsor-name" data-de="Swissuniversities" data-en="Swissuniversities">Sponsor Name</h3>
+              <p class="sponsor-desc" data-de="swissuniversities ist die Dachorganisation der Schweizer Hochschulen. Sie koordiniert gemeinsame Interessen der Universitäten, Fachhochschulen und Pädagogischen Hochschulen und setzt sich für Qualität, Vielfalt und Chancengleichheit im Schweizer Hochschulsystem ein." data-en="swissuniversities is the umbrella organisation of Swiss higher education institutions. It represents universities, universities of applied sciences, and universities of teacher education, promoting quality, diversity, and equal opportunities across the Swiss higher education landscape.">Here comes a short description of the sponsor and how they support She Shapes Tech.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Become a sponsor section redesigned like contact-links-card -->
+        <div class="contact-links-card" style="max-width: 500px; margin: 3rem auto 0;">
+          <h3 class="links-title" data-de="Sponsor werden?" data-en="Become a sponsor?">Become a sponsor?</h3>
+          
+          <a href="mailto:sheshapestech.engineering@zhaw.ch" class="contact-link">
+            <div class="link-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <p class="link-title" data-de="Kontakt aufnehmen" data-en="Get in touch">Get in touch</p>
+              <p class="link-desc">sheshapestech.engineering@zhaw.ch</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-text" data-de="© 2025 She Shapes Tech. Alle Rechte vorbehalten." data-en="© 2025 She Shapes Tech. All rights reserved.">© 2025 She Shapes Tech. All rights reserved.</p>
+
+      <div class="footer-social">
+        <span data-de="Folge uns" data-en="Follow us">Follow us</span>
+        <a href="https://teams.microsoft.com/l/channel/19%3AXi784Ms6NohX6oO0abKqMh0Py_Kr3x9U7NtXGiziwyM1%40thread.tacv2/General?groupId=c9022015-7217-4b42-a31d-dd1ae8f6bc8e&tenantId=5d1a9f9d-201f-4a10-b983-451cf65cbc1e" target="_blank" class="social-btn" aria-label="Microsoft Teams">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </a>
+        <a href="https://chat.whatsapp.com/KIdNWrZGl5KG2G5Mlc4Zsm" target="_blank" class="social-btn" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
